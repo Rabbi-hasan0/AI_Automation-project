@@ -13,3 +13,11 @@
    ```
 5. Then run: `n8n'
 
+This is all localhost setup
+
+Then:
+1. set invironment variable: `WEBHOOK_URL: https://permissible-sloshy-maribel.ngrok-free.dev/` 
+2. Then run : `n8n` and `ngrok http 5678`
+3. Go to the link: `https://permissible-sloshy-maribel.ngrok-free.dev/`
+4. 
+
