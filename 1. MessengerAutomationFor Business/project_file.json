@@ -1,0 +1,457 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "facebook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1248,
+        -176
+      ],
+      "id": "85345aa1-334c-4bdc-9960-0c2fab3f2714",
+      "name": "Webhook",
+      "webhookId": "7f758b0a-40ec-414e-aa00-a90905d260cf"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "2627b2df-717f-4837-8e5f-aa9c1bf33d6d",
+              "leftValue": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        -976,
+        -96
+      ],
+      "id": "ef25465d-7b09-4fcf-a5e9-0d2ef02a2405",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v25.0/{{ $('Filter').item.json.body.entry[0].id }}/messages",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "EAALECYSbYN0BRLLBc1lIn58aTZCRmkq5u0PvbZAZCO60CDHaqZBKTA6qZCcFleiFVyYMZC9Oi6pbL4fTz2VOskvrVAV2lEyY9eQY9wWWhfqu5gR2ehbMZBdeToenaCh5N6rjhowKCmKEBtt0S2nfeBmPeL4cZBCJSMZAsgqoF1WDTArHUINUyXVK9MSAPZBZBjKxDS2obSJKgZDZD"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $('Filter').item.json.body.entry[0].messaging[0].sender.id }}\"\n  },\n  \"messaging_type\": \"RESPONSE\",\n  \"message\": {\n    \"text\": {{ JSON.stringify($json.output) }}\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -432,
+        -96
+      ],
+      "id": "f36f2542-ba63-461c-90c8-7f1172b23ddd",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.entry[0].messaging[0].message.text }}",
+        "options": {
+          "systemMessage": "তুমি একজন পেশাদার, ভদ্র এবং বন্ধুত্বপূর্ণ কাস্টমার সাপোর্ট এজেন্ট। তুমি \"SmartFlow Automations\" এর পক্ষ থেকে গ্রাহকদের সাথে কথা বলবে।\n\n🎯 তোমার প্রধান লক্ষ্য:\n- গ্রাহকদের প্রশ্নের পরিষ্কার ও সহজ উত্তর দেওয়া\n- তাদের আমাদের সার্ভিস নিতে আগ্রহী করা\n- লিড সংগ্রহ করা\n- মিটিং বুক করা (high priority)\n\n━━━━━━━━━━━━━━━━━━━━━━━\n📌 যোগাযোগের নিয়ম:\n\n১. প্রতিটি উত্তরের শুরুতে অভিবাদন দাও:\n👉 \"আসসালামু আলাইকুম\" / \"নমস্কার\"\n\n২. উত্তর স্টাইল:\n- ছোট ও সহজ ভাষায় লিখবে\n- 3-5টি bullet point ব্যবহার করবে\n- অপ্রয়োজনীয় বড় ব্যাখ্যা দিবে না\n\n৩. টোন:\n- ভদ্র, বন্ধুত্বপূর্ণ, প্রফেশনাল\n- কাস্টমারকে গুরুত্ব দাও\n- কনফিডেন্স তৈরি করো\n\n━━━━━━━━━━━━━━━━━━━━━━━\n💼 আমাদের সার্ভিসসমূহ:\n\n- WhatsApp Automation\n- Facebook Messenger Automation\n- Instagram Automation\n- Lead Generation System\n- n8n Workflow Automation\n- AI Chatbot Integration\n- API Integration\n\n👉 প্রয়োজনে গ্রাহককে সহজভাবে explain করো\n\n━━━━━━━━━━━━━━━━━━━━━━━\n💰 মূল্য সংক্রান্ত প্রশ্ন:\n\nযদি গ্রাহক দাম জানতে চায়:\n- সরাসরি দাম বলবে না\n- বলবে:\n\n\"সার্ভিস অনুযায়ী দাম নির্ধারণ করা হয় 😊\"\n\n- তারপর বলবে:\n👉 \"আপনি চাইলে একটি ফ্রি মিটিং বুক করতে পারেন, সেখানে বিস্তারিত আলোচনা করা যাবে\"\n\n━━━━━━━━━━━━━━━━━━━━━━━\n📅 মিটিং বুকিং সিস্টেম:\n\n👉 যদি গ্রাহক আগ্রহ দেখায় (যেমন: \"আমি নিতে চাই\", \"details বলুন\", \"price?\", \"কিভাবে শুরু করবো\"):\n\nতাকে politely বলবে:\n\n\"আপনার জন্য একটি ফ্রি মিটিং সেটআপ করে দিচ্ছি। অনুগ্রহ করে নিচের তথ্যগুলো দিন:\"\n\n• নাম  \n• ইমেইল  \n• পছন্দের তারিখ  \n• পছন্দের সময়  \n\n👉 সব তথ্য পাওয়ার পর:\n\n\"ধন্যবাদ! আপনার মিটিং সফলভাবে বুক করা হয়েছে ✅  \nআমরা নির্ধারিত সময় আপনার সাথে যোগাযোগ করবো।\"\n\n━━━━━━━━━━━━━━━━━━━━━━━\n🧠 Smart Behavior:\n\n১. যদি কেউ শুধু \"Hi / Hello\" বলে:\n- greet করো\n- জিজ্ঞাসা করো: \"আপনি কোন সার্ভিস সম্পর্কে জানতে চান?\"\n\n২. যদি গ্রাহক confused হয়:\n- suggest করো:\n👉 \"আপনার জন্য WhatsApp Automation বা Lead Generation System ভালো হতে পারে\"\n\n৩. যদি গ্রাহক business related প্রশ্ন করে:\n- simpleভাবে automation এর benefit explain করো:\n  • time save\n  • fast reply\n  • বেশি sales\n\n━━━━━━━━━━━━━━━━━━━━━━━\n🚫 যেগুলো করবে না:\n\n- খুব বড় paragraph লিখবে না\n- technical jargon বেশি ব্যবহার করবে না\n- ভুল বা অনুমান ভিত্তিক তথ্য দিবে না\n\n━━━━━━━━━━━━━━━━━━━━━━━\n🎯 Final Goal:\n\n- গ্রাহককে interested করা\n- trust build করা\n- meeting বুক করানো (main goal)\n\n━━━━━━━━━━━━━━━━━━━━━━━\n\n📥 এখন নিচের \"User Message\" অনুযায়ী উত্তর দাও।"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -800,
+        -96
+      ],
+      "id": "b001385c-c1a7-4de5-8fd3-a1d2c76ff39f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1MJhdEVvC5ge-VXWoa6ItVovAtSlxo4CqaRRguZvhxSU/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1MJhdEVvC5ge-VXWoa6ItVovAtSlxo4CqaRRguZvhxSU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -656,
+        112
+      ],
+      "id": "442119c9-4427-4e1e-a1a1-30558d627490",
+      "name": "Get services data",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KZZN6ejatlaBTSYX",
+          "name": "oAuth credentials"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to save user booking details (Name, Service, Contact, Time) to the Google Sheet. Call this tool as soon as you have all the information from the user.",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1MJhdEVvC5ge-VXWoa6ItVovAtSlxo4CqaRRguZvhxSU/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1246073127,
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1MJhdEVvC5ge-VXWoa6ItVovAtSlxo4CqaRRguZvhxSU/edit#gid=1246073127"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "User Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('User_Name', ``, 'string') }}",
+            "Request Service": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Request_Service', ``, 'string') }}",
+            "Contact": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Contact', ``, 'string') }}",
+            "Booking status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Booking_status', ``, 'string') }}",
+            "create at": "={{ $now.format('yyyy.MM.dd hh:mm') }}",
+            "meeting time": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('meeting_time', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "User Name",
+              "displayName": "User Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Request Service",
+              "displayName": "Request Service",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contact",
+              "displayName": "Contact",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Booking status",
+              "displayName": "Booking status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "create at",
+              "displayName": "create at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "meeting time",
+              "displayName": "meeting time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -512,
+        128
+      ],
+      "id": "30f06c81-7bcf-421e-8b4b-85a56c0df9df",
+      "name": "Booking",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KZZN6ejatlaBTSYX",
+          "name": "oAuth credentials"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to create a formal meeting event in Google Calendar once the user's data has been saved to the Google Sheet.",
+        "calendar": {
+          "__rl": true,
+          "value": "rrabbi9910@gmail.com",
+          "mode": "list",
+          "cachedResultName": "rrabbi9910@gmail.com"
+        },
+        "additionalFields": {
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -368,
+        112
+      ],
+      "id": "425e155d-c118-43ea-8f7e-9595de4e8134",
+      "name": "Create an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "SD7rcMvecvviNvpb",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -1440,
+        -256
+      ],
+      "id": "c9987cb7-dd87-4399-90de-60a062e08bc0",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "mt4IoJFQmNFtB4uf",
+          "name": "Groq account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -800,
+        112
+      ],
+      "id": "e90708e4-34c8-41e7-98c2-d3258ae42075",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -960,
+        -320
+      ],
+      "id": "d8bdc3dc-6b46-407e-9804-afcf2dba9208",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        112
+      ],
+      "id": "ab1b0e9a-2dcd-42ab-9b78-eac3ca0b3438",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "fXX5KCzVavCOnAgK",
+          "name": "Google Gemini(PaLM) Api account 4"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get services data": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Booking": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "d0459600-c155-4517-9fff-6ac5daac4ed4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "993828306673a597b5426593180f796df9800e493c46b6fc1f34d1e7ded2e47c"
+  },
+  "id": "NyC13Azw8HZ0q1XQ",
+  "tags": []
+}
