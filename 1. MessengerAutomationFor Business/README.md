@@ -55,5 +55,29 @@ The agent is programmed with a specific system prompt to:
 * Redirect pricing queries to a "Free Discovery Meeting."
 * Collect leads and confirm bookings instantly.
 
+
+## Project:
+### System Flow Screenshots
+
+<table width="100%">
+  <tr>
+    <td align="center" width="33%">
+      <b>1. User Inquiry via Webhook</b>
+      <br><br>
+      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat1.jpeg" alt="Webhook Trigger" width="100%">
+    </td>
+    <td align="center" width="33%">
+      <b>2. AI Agent Processing</b>
+      <br><br>
+      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat2.jpeg" alt="AI Agent" width="100%">
+    </td>
+    <td align="center" width="33%">
+      <b>3. Calendar Booking Confirmation</b>
+      <br><br>
+      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/n8n_workflow.png" alt="Booking Confirmation" width="100%">
+    </td>
+  </tr>
+</table>
 ---
 **Developed by [Rabbi Hasan]** *Passionate about AI, No-code Automation, and Workflow Optimization.*
+
