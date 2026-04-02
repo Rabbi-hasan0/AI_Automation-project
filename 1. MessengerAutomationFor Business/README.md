@@ -71,7 +71,12 @@ The agent is programmed with a specific system prompt to:
          <br><br>
          <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat2.jpeg" alt="AI Agent" width="100%">
        </td>
-      </tr>
+        <td align="center" width="33%">
+         <b>2. Http Response </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/reswponse.png" alt="AI Agent" width="100%">
+       </td>
+   </tr>
    <tr>
       <td align="center" width="33%">
          <b>3. User Inquiry via Webhook</b>
