@@ -61,21 +61,50 @@ The agent is programmed with a specific system prompt to:
 
 <table width="100%">
   <tr>
-    <td align="center" width="33%">
-      <b>1. User Inquiry via Webhook</b>
-      <br><br>
-      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat1.jpeg" alt="Webhook Trigger" width="100%">
-    </td>
-    <td align="center" width="33%">
-      <b>2. AI Agent Processing</b>
-      <br><br>
-      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat2.jpeg" alt="AI Agent" width="100%">
-    </td>
-    <td align="center" width="33%">
-      <b>3. Calendar Booking Confirmation</b>
-      <br><br>
-      <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/n8n_workflow.png" alt="Booking Confirmation" width="100%">
-    </td>
+       <td align="center" width="33%">
+         <b>1. User service </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat1.jpeg" alt="Webhook Trigger" width="100%">
+       </td>
+       <td align="center" width="33%">
+         <b>2. User service </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat2.jpeg" alt="AI Agent" width="100%">
+       </td>
+      </tr>
+   <tr>
+      <td align="center" width="33%">
+         <b>3. User Inquiry via Webhook</b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/fb_automation.png" alt="Webhook Trigger" width="100%">
+       </td>
+       <td align="center" width="33%">
+         <b>4. AI Agent Processing</b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/ai_agent.png" alt="AI Agent" width="100%">
+       </td>
+       <td align="center" width="33%">
+         <b>5. Calendar Booking Confirmation</b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/calendar.png" alt="Booking Confirmation" width="100%">
+       </td>
+  </tr>
+   <tr>
+      <td align="center" width="33%">
+         <b>6. Database sheet </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/database_saved.png" alt="Webhook Trigger" width="100%">
+       </td>
+       <td align="center" width="33%">
+         <b>7. Google sheet connection</b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/google_sheet.png" alt="AI Agent" width="100%">
+       </td>
+       <td align="center" width="33%">
+         <b>8. n8n Workflow </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/n8n_workflow.png" alt="Booking Confirmation" width="100%">
+       </td>
   </tr>
 </table>
 ---
