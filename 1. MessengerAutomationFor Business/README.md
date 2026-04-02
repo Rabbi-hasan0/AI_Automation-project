@@ -7,7 +7,7 @@ An advanced automation workflow built with **n8n** and powered by **Google Gemin
 ## 📺 Project Overview
 This system acts as a bridge between customers and business services. It doesn't just reply to messages; it understands intent, fetches service data, and takes action (like booking a calendar event) based on the conversation.
 
-### ✨ Key Features
+### Key Features
 * **Intelligent AI Agent:** Powered by `Gemini 1.5` to provide polite, professional, and context-aware responses in Bengali/English.
 * **Automated Booking:** High-priority logic to collect user details (Name, Email, Date) and sync them with **Google Calendar**.
 * **Live Data Fetching:** The AI reads service descriptions and pricing logic directly from **Google Sheets**.
