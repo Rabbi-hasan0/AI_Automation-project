@@ -16,7 +16,7 @@ This system acts as a bridge between customers and business services. It doesn't
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 | Component | Technology |
 | :--- | :--- |
 | **Automation Engine** | n8n |
@@ -27,7 +27,7 @@ This system acts as a bridge between customers and business services. It doesn't
 
 ---
 
-## 🏗️ Workflow Logic
+## Workflow Logic
 1.  **Webhook:** Receives incoming messages from platforms like WhatsApp, Facebook, or a Website.
 2.  **Filter:** Validates the incoming data to ensure smooth processing.
 3.  **AI Agent (Core):**
@@ -39,7 +39,7 @@ This system acts as a bridge between customers and business services. It doesn't
 
 ---
 
-## 🚀 How to Setup
+## How to Setup
 1.  **Clone the Repository:** Download the `workflow.json` file.
 2.  **Import to n8n:** Create a new workflow in n8n and import the JSON file.
 3.  **API Keys:** * Add your **Google AI Studio** API key for Gemini.
@@ -48,7 +48,7 @@ This system acts as a bridge between customers and business services. It doesn't
 
 ---
 
-## 🎯 Use Case: SmartFlow Automations
+## Use Case: SmartFlow Automations
 The agent is programmed with a specific system prompt to:
 * Greet users with "Assalamu Alaikum/Namaskar".
 * Explain services like WhatsApp/Facebook Automation.
