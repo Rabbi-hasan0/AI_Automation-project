@@ -11,6 +11,11 @@ This system acts as a bridge between customers and business services. It doesn't
 
 <table width="100%">
   <tr>
+      <td align="center" width="33%">
+         <b>8. n8n Workflow </b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/n8n_workflow.png" alt="Booking Confirmation" width="100%">
+       </td>
        <td align="center" width="33%">
          <b>1. User service </b>
          <br><br>
@@ -21,17 +26,12 @@ This system acts as a bridge between customers and business services. It doesn't
          <br><br>
          <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/chat2.jpeg" alt="AI Agent" width="100%">
        </td>
-        <td align="center" width="33%">
+   </tr>
+   <tr>
+       <td align="center" width="33%">
          <b>2. Http Response </b>
          <br><br>
          <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/reswponse.png" alt="AI Agent" width="100%">
-       </td>
-   </tr>
-   <tr>
-      <td align="center" width="33%">
-         <b>3. User Inquiry via Webhook</b>
-         <br><br>
-         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/fb_automation.png" alt="Webhook Trigger" width="100%">
        </td>
        <td align="center" width="33%">
          <b>4. AI Agent Processing</b>
@@ -45,20 +45,20 @@ This system acts as a bridge between customers and business services. It doesn't
        </td>
   </tr>
    <tr>
+       <td align="center" width="33%">
+         <b>7. Google sheet connection</b>
+         <br><br>
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/google_sheet.png" alt="AI Agent" width="100%">
+       </td>
       <td align="center" width="33%">
          <b>6. Database sheet </b>
          <br><br>
          <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/database_saved.png" alt="Webhook Trigger" width="100%">
        </td>
        <td align="center" width="33%">
-         <b>7. Google sheet connection</b>
+         <b>3. User Inquiry via Webhook</b>
          <br><br>
-         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/google_sheet.png" alt="AI Agent" width="100%">
-       </td>
-       <td align="center" width="33%">
-         <b>8. n8n Workflow </b>
-         <br><br>
-         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/n8n_workflow.png" alt="Booking Confirmation" width="100%">
+         <img src="https://github.com/Rabbi-hasan0/AI_Automation-project/blob/main/1.%20MessengerAutomationFor%20Business/assets/fb_automation.png" alt="Webhook Trigger" width="100%">
        </td>
   </tr>
 </table>
